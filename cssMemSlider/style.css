@@ -88,20 +88,20 @@
 	display: none;
 }
 
-.container1:hover .label1 {
+.label1:hover .container1 {
     background: #000000;
 }
 
-.container2:hover .label2 {
+.label2:hover .container2 {
     background: #000000;
 }
-.container3:hover .label3 {
+.label3:hover .container3 {
     background: #000000;
 }
-.container4:hover .label4 {
+.label4:hover .container4 {
     background: #000000;
 }
-.container5:hover .label5{
+.label5:hover .container5{
     background: #000000;
 }
 
@@ -113,30 +113,31 @@
     align-items: center;
 }
 
-.cont label {
+.label {
+    cursor: pointer;
+    width: 12vw;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.cont {
+    cursor: pointer;
     cursor: pointer;
     border: 0.3em solid #000000;
     border-radius: 50%;
     width: 2vw;
     height: 4vh;
 }
-.cont {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    width: 12vw;
-    height: 6vh;
-}
 
 
-.main-container label:hover, 
-#mem1:checked ~ .controls .cont .label1,
-#mem2:checked ~ .controls .cont .label2,
-#mem3:checked ~ .controls .cont .label3,
-#mem4:checked ~ .controls .cont .label4,
-#mem5:checked ~ .controls .cont .label5 {
+.main-container .cont:hover, 
+#mem1:checked ~ .controls .label .container1,
+#mem2:checked ~ .controls .label .container2,
+#mem3:checked ~ .controls .label .container3,
+#mem4:checked ~ .controls .label .container4,
+#mem5:checked ~ .controls .label .container5 {
 	background: #000000;
 }
 
@@ -261,22 +262,22 @@
         gap: 5%;
    }
 
-   .cont label {
+   .cont {
         width: 6vw;
         height: 5vh;
     }
-    .cont {
+    .label {
         width: 5vw;
         height: 6vh;
     }
 }
 
 @media (max-width: 420px) {
-    .cont label {
+    .cont {
         width: 5vw;
         height: 4vh;
     }
-    .cont {
+    .label {
         width: 5vw;
         height: 6vh;
     }
