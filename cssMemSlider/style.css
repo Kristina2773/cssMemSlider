@@ -42,13 +42,6 @@
     display: grid;
     grid-template-rows: 20fr 0fr;
     grid-template-columns: 100% 0% 0% 0% 0%;
-    /* flex-direction: column; */
-}
-
-.mem-title {
-    font-family: Georgia;
-    font-size: 1.2rem;
-    align-self: center;
 }
 .mem1 {
     background-image: url(./assets/img/Grumpy-Cat-Not-Amused.jpg);
@@ -56,6 +49,7 @@
     background-size: 100% 80vh;
     width: 100%;
     height: 100%;
+    border-radius: 5%;
 }
 .mem2 {
     background-image: url(./assets/img/cat.jpg);
@@ -63,6 +57,7 @@
     background-size: 100% 80vh;
     width: 100%;
     height: 100%;
+    border-radius: 5%;
 }
 .mem3 {
     background-image: url(./assets/img/cat3.jpg);
@@ -70,6 +65,7 @@
     background-size: 100% 80vh;
     width: 100%;
     height: 100%;
+    border-radius: 5%;
 }
 .mem4 {
     background-image: url(./assets/img/cat4.jpg);
@@ -77,6 +73,7 @@
     background-size: 100% 80vh;
     width: 100%;
     height: 100%;
+    border-radius: 5%;
 }
 .mem5 {
     background-image: url(./assets/img/cat5.jpg);
@@ -84,28 +81,13 @@
     background-size: 100% 80vh;
     width: 100%;
     height: 100%;
+    border-radius: 5%;
 }
-/* .buttons-wrapper {
-    display: flex;
-    gap: 1vw;
-} */
 
 .btns {
 	display: none;
 }
 
-/* .controls:hover label {
-    background: #000000;
-} */
-
-/* .controls label:hover,
-    .mem1:checked ~ .controls label:first-child,
-    .mem2:checked ~ .controls label:nth-child(2),
-    .mem3:checked ~ .controls label:nth-child(3),
-    .mem4:checked ~ .controls label:nth-child(4),
-    .mem5:checked ~ .controls label:last-child {
-	background: #000000;
-} */
 .container1:hover .label1 {
     background: #000000;
 }
@@ -124,7 +106,6 @@
 }
 
 .controls {
-
     width: 15%;
     height: 10%;
     align-self: center;
@@ -204,13 +185,99 @@
     order: -1;
 }
 
-/* #mem1:checked ~ .mem-wrapper > .mem1,
-#mem2:checked ~ .mem-wrapper > .mem2,
-#mem3:checked ~ .mem-wrapper > .mem3,
-#mem4:checked ~ .mem-wrapper > .mem4,
-#mem5:checked ~ .mem-wrapper > .mem5 {
+.mems-titles {
+    display: grid;
+    align-self: center;
+    /* grid-template-rows: 1fr 0fr;
+    grid-template-columns: 100% 0% 0% 0% 0%; */
+    color: black;
+    overflow: hidden;
+}
+
+.mem-title {
+    font-family: Georgia;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+    opacity: 0;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+#mem1:checked ~ .mems-titles > .title-1 {
 	opacity: 1;
-	z-index: 1;
-	transform: scale(1);
+	z-index: 11;
+    order: -5;
+}
+
+#mem2:checked ~ .mems-titles > .title-2 {
+	opacity: 1;
+	z-index: 12;
+    order: -4;
+}
+
+#mem3:checked ~ .mems-titles > .title-3 {
+	opacity: 1;
+	z-index: 13;
+    order: -3;
+}
+
+#mem4:checked ~ .mems-titles > .title-4 {
+	opacity: 1;
+	z-index: 14;
+    order: -2;
+}
+
+#mem5:checked ~ .mems-titles > .title-5 {
+	opacity: 1;
+	z-index: 15;
     order: -1;
-} */
+}
+
+.container5:hover ~ .container4 > .label4 {
+    background: inherit;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+   .main-container {
+       flex-direction: column;
+       flex-wrap: nowrap;
+       flex-grow: 100% 50% 50%;
+       justify-content: center;
+       align-items: center;
+   }
+   .mems-titles {
+       width: 100%;
+       /* height: 1vh; */
+       order: 1;
+   }
+   .controls {
+        width: 28%;
+        height: 10%;
+        gap: 5%;
+   }
+
+   .cont label {
+        width: 6vw;
+        height: 5vh;
+    }
+    .cont {
+        width: 5vw;
+        height: 6vh;
+    }
+}
+
+@media (max-width: 420px) {
+    .cont label {
+        width: 5vw;
+        height: 4vh;
+    }
+    .cont {
+        width: 5vw;
+        height: 6vh;
+    }
+}
