@@ -1,0 +1,362 @@
+@font-face {
+    font-family: Georgia;
+    src: url("../../assets/fonts/Georgia.ttf")
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    background: url(./assets/img/mins2.jpg) center / cover no-repeat;
+    background-size: 100% 150%;
+}
+
+.main {
+    width: 100%;
+}
+.main-container {
+    width: 90%;
+    padding: 2%;
+    height: 95vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 100% 50% 50%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.buttons-wrapper {
+    align-self: center;
+}
+.mem-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 20fr 0fr;
+    grid-template-columns: 100% 0% 0% 0% 0% 0%;
+}
+.mem1 {
+    background-image: url(./assets/img/Grumpy-Cat-Not-Amused.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80vh; 
+    width: 100%;
+    height: 100%;
+    border-radius: 2em;
+}
+
+.mem2 {
+    background-image: url(./assets/img/tomandjerry.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80vh;
+    width: 100%;
+    height: 100%;
+    border-radius: 2em;
+}
+.mem3 {
+    justify-self: center;
+    background-image: url(./assets/img/cock.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 80vh;
+    width: 50%;
+    height: 100%;
+    border-radius: 2em;
+}
+.mem4 {
+    background-image: url(./assets/img/squirrel.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 80vh;
+    width: 100%;
+    height: 100%;
+    border-radius: 2em;
+}
+.mem5 {
+    background-image: url(./assets/img/catengl.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80vh;
+    width: 100%;
+    height: 100%;
+    border-radius: 2em;
+}
+
+.mem6 {
+    background-image: url(./assets/img/testing.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 80vh;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.btns {
+	display: none;
+}
+
+.label1:hover .container1 {
+    background: rgb(252, 252, 252);
+    border:rgb(252, 252, 252);
+}
+
+.label2:hover .container2 {
+    background: rgb(252, 252, 252);
+    border:rgb(252, 252, 252);
+}
+.label3:hover .container3 {
+    background: rgb(252, 252, 252);
+    border:rgb(252, 252, 252);
+}
+.label4:hover .container4 {
+    background: rgb(252, 252, 252);
+    border:rgb(252, 252, 252);
+}
+.label5:hover .container5{
+    background: rgb(252, 252, 252);
+    border:rgb(252, 252, 252);
+}
+.label6:hover .container6{
+    background: rgb(252, 252, 252);
+    border:rgb(252, 252, 252);
+}
+
+.controls {
+    width: 20%;
+    height: 10%;
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    cursor: pointer;
+    width: 12vw;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.cont {
+    cursor: pointer;
+    cursor: pointer;
+    border: 0.3em solid rgb(184, 0, 0);
+    background: rgb(184, 0, 0);
+    border-radius: 50%;
+    width: 2vw;
+    height: 4vh;
+}
+
+
+.main-container .cont:hover {
+    background: rgb(252, 252, 252);
+}
+
+
+
+#mem1:checked ~ .controls .label .container1,
+#mem2:checked ~ .controls .label .container2,
+#mem3:checked ~ .controls .label .container3,
+#mem4:checked ~ .controls .label .container4,
+#mem5:checked ~ .controls .label .container5,
+#mem6:checked ~ .controls .label .container6 {
+    background: inherit;
+}
+
+.label:active .container1,
+.label:active .container2,
+.label:active .container3,
+.label:active .container4,
+.label:active .container5,
+.label:active .container6 {
+    background: rgb(241, 18, 111);
+}
+
+#mem1:checked ~ .controls .label:hover .container1,
+#mem2:checked ~ .controls .label:hover .container2,
+#mem3:checked ~ .controls .label:hover .container3,
+#mem4:checked ~ .controls .label:hover .container4,
+#mem5:checked ~ .controls .label:hover .container5,
+#mem6:checked ~ .controls .label:hover .container6 {
+    border: 0.2em solid rgb(255, 255, 255);
+}
+
+.mems {
+    z-index: 0;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: transform ease-in .5s, opacity ease-in .5s;
+}
+
+
+#mem1:checked ~ .mem-wrapper > .mem1 {
+	opacity: 1;
+	z-index: 1;
+    order: -5;
+	transform: scale(1);
+    
+}
+
+#mem2:checked ~ .mem-wrapper > .mem2 {
+	opacity: 1;
+	z-index: 2;
+    order: -4;
+	transform: scale(1);
+    
+}
+
+#mem3:checked ~ .mem-wrapper > .mem3 {
+	opacity: 1;
+	z-index: 3;
+	transform: scale(1);
+    order: -3;
+}
+
+#mem4:checked ~ .mem-wrapper > .mem4 {
+	opacity: 1;
+	z-index: 4;
+	transform: scale(1);
+    order: -2;
+}
+
+#mem5:checked ~ .mem-wrapper > .mem5 {
+	opacity: 1;
+	z-index: 5;
+	transform: scale(1);
+    order: -1;
+}
+
+#mem6:checked ~ .mem-wrapper > .mem6 {
+	opacity: 1;
+	z-index: 5;
+	transform: scale(1);
+    order: -1;
+}
+
+@keyframes text-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.mems-titles {
+    display: grid;
+    align-self: center;
+    color: rgb(184, 0, 0);
+}
+
+.mem-title {
+    font-family: Georgia;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+    opacity: 0;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+#mem1:checked ~ .mems-titles > .title-1 {
+	opacity: 1;
+	z-index: 11;
+    order: -5;
+    animation: text-right 1.4s;
+}
+
+#mem2:checked ~ .mems-titles > .title-2 {
+	opacity: 1;
+	z-index: 12;
+    order: -4;
+    animation: text-right 1.4s;
+}
+
+#mem3:checked ~ .mems-titles > .title-3 {
+	opacity: 1;
+	z-index: 13;
+    order: -3;
+    animation: text-right 1.4s;
+}
+
+#mem4:checked ~ .mems-titles > .title-4 {
+	opacity: 1;
+	z-index: 14;
+    order: -2;
+    animation: text-right 1.4s;
+}
+
+#mem5:checked ~ .mems-titles > .title-5 {
+	opacity: 1;
+	z-index: 15;
+    order: -1;
+    animation: text-right 1.4s;
+}
+#mem6:checked ~ .mems-titles > .title-6 {
+	opacity: 1;
+	z-index: 15;
+    order: -1;
+    animation: text-right 1.4s;
+}
+
+@media (max-width: 767px) {
+   .main-container {
+       width: 90%;
+       flex-direction: column;
+       flex-wrap: nowrap;
+       flex-grow: 100% 50% 50%;
+       gap: 1.5%;
+   }
+   .mem-wrapper {
+        width: 100%;
+        height: 120vh;
+    }
+   .mems-titles {
+       width: 100%;
+       order: 1;
+   }
+   .mem3 {
+       width: 100%;
+   }
+   .controls {
+        width: 28%;
+        height: 5%;
+        gap: 5%;
+   }
+   .cont {
+        width: 3vw;
+        height: 4vh;
+    }
+    .label {
+        width: 5vw;
+        height: 5vh;
+    }
+    .mem-title {
+        font-size: 1rem;
+        line-height: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .main-container {
+        width: 100%;
+    }
+    .mem-wrapper {
+        width: 100%;
+        height: 100vh;
+    }
+    .cont {
+        width: 5vw;
+        height: 4vh;
+    }
+    .label {
+        width: 5vw;
+        height: 6vh;
+    }
+    
+    
+}
