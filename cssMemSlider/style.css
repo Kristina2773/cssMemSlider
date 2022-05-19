@@ -166,6 +166,16 @@ body {
 #mem6:checked ~ .controls .label .container6 {
     background: inherit;
 }
+
+.label:active .container1,
+.label:active .container2,
+.label:active .container3,
+.label:active .container4,
+.label:active .container5,
+.label:active .container6 {
+    background: rgb(241, 18, 111);
+}
+
 #mem1:checked ~ .controls .label:hover .container1,
 #mem2:checked ~ .controls .label:hover .container2,
 #mem3:checked ~ .controls .label:hover .container3,
